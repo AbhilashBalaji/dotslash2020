@@ -60,9 +60,9 @@ def switch(sentiment):
 def _generate(generator, options, n_outputs):
     for i in range(n_outputs):
         sequence = generator.generate(music_pb2.NoteSequence(), options)
-        mid_path = os.getcwd()+"/out/midis/test"+str(i)+".mid"
+        mid_path = os.getcwd()+"/out/piano/test"+str(i)+".mid"
         mm.sequence_proto_to_midi_file(sequence, mid_path)
-    print("Genereated to "+os.getcwd()+"/out/midis/test")
+    print("Genereated to "+os.getcwd()+"/out/piano/test")
 
 
 def generate(sentiment, n_sec, n_op):
@@ -77,11 +77,12 @@ def generate(sentiment, n_sec, n_op):
     generator.initialize()
     generator_options = generator_pb2.GeneratorOptions()
 
-    generator_options.args['temperature'].float_value = 2.0
+    generator_options.args['temperature'].float_value = 0.6
 
     # generator_options.args['pitch_class_histogram'].string_value = switch()
-    generator_options.args['pitch_class_histogram'].string_value = "[2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
-
+    generator_options.args['pitch_class_histogram'].string_value = "[2, 0, 1, 1, 0, 1, 0, 2, 0, 1, 1, 0]"
+    generator_options.args['primer_sequence'].string_value = "[57, 64, 67,76,52]"
+    generator_options.args['num_steps'].int_value=64
     # Cannot append
     generate_section = generator_options.generate_sections.add(
         start_time=0, end_time=n_sec)

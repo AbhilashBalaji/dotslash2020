@@ -1,3 +1,5 @@
 ./venv
 *.pyc
 .vscode
+/out/drums/*
+/out/piano/*
