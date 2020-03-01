@@ -83,9 +83,11 @@ def generate(sentiment, n_sec, n_op):
     generator_options.args['pitch_class_histogram'].string_value = "[2, 0, 1, 1, 0, 1, 0, 2, 0, 1, 1, 0]"
     generator_options.args['primer_sequence'].string_value = "[57, 64, 67,76,52]"
     generator_options.args['num_steps'].int_value=64
+    seconds_per_step = 1.0 / generator.steps_per_second
+    generate_end_time = 64 * seconds_per_step
     # Cannot append
     generate_section = generator_options.generate_sections.add(
-        start_time=0, end_time=n_sec)
+        start_time=0, end_time=generate_end_time)
 
     _generate(generator, generator_options, n_op)
 
