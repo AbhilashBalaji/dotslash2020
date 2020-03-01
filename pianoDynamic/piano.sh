@@ -9,4 +9,7 @@ performance_rnn_generate \
 --num_outputs=10 \
 --num_steps=3000 \
 --pitch_class_histogram="${ADDR[0]}" \
---temperature=${ADDR[1]}
+--temperature=${ADDR[1]} \
+--beam_width=0.5
+--branch_factor=0.5
+# --primer_melody="[60,62,64,65,67,69,71,72]"
