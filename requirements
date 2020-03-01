@@ -100,6 +100,7 @@ pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.19
 pydot==1.4.1
+#pyFluidSynth==1.2.5
 pyglet==1.5.0
 Pygments==2.5.2
 pygtrie==2.3.2
