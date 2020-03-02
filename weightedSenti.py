@@ -1,20 +1,7 @@
 from subprocess import call
 from os import getcwd
-from requests import post
 import re
-# with open('joker.html') as f :
-#     text = f.read()
-# text = re.sub(r'<.*>|</.*>|\n|\t|[0-9]+|\.|\:|\(.*\)','',text)
-# text = ['i am happy', 'i feel happy']
-# data={
-#     'text' : str(text),
-#     #DQGXTm78iYT5YNaGec63L3anhkURdTCbEgvmxiTtuas
-#     # 'api_key' : 'QYBB8z8xGCp0c2N4N8sPUz6pKe0MxGKJb0ct80NZgi8'
-#     'api_key': 'DQGXTm78iYT5YNaGec63L3anhkURdTCbEgvmxiTtuas',
-# }
-# r = post('https://apis.paralleldots.com/v4/emotion_batch', data)
-# print(r)
-# eg = r.json()['emotion']
+
 eg = [{
     "Bored": 0.2768371562,
     "Angry": 0.2231197248,
