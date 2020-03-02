@@ -53,7 +53,7 @@ print("python3 "+getcwd()+"/pianoDynamic/performance_rnn_generate.py \
 --pitch_class_histogram=\""+str(hist)+"\" \
 --temperature=")
 
-run(["python3 "+getcwd()+"pianoDynamic/performance_rnn_generate.py --config=multiconditioned_performance_with_dynamics --bundle_file"])
+run(["python3 "+getcwd()+"pianoDynamic/performance_rnn_generate.py --config=multiconditioned_performance_with_dynamics"])
 # run(["python3 "+getcwd()+"pianoDynamic/performance_rnn_generate.py \
 # --config=multiconditioned_performance_with_dynamics \
 # --bundle_file=./models/multiconditioned_performance_with_dynamics.mag \

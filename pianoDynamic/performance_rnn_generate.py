@@ -74,7 +74,7 @@ tf.app.flags.DEFINE_integer(
     'The beam size to use for beam search when generating tracks.')
 tf.app.flags.DEFINE_integer(
     'branch_factor', 1,
-    'The branch factor to use for beam search when generating tracks.')
+    'The branch factor to use for   search when generating tracks.')
 tf.app.flags.DEFINE_integer(
     'steps_per_iteration', 1,
     'The number of steps to take per beam search iteration.')
@@ -175,7 +175,7 @@ def run_with_flags(generator):
   generator_options = generator_pb2.GeneratorOptions()
   # Set the start time to begin when the last note ends.
   generate_section = generator_options.generate_sections.add(
-      start_time=primer_sequence.total_time,
+      start_time=0,
       end_time=generate_end_time)
 
   if generate_section.start_time >= generate_section.end_time:
